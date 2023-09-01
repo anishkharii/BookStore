@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../img/books.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/style/style.css" /> 
+    <link rel="stylesheet" href="/style/signup.css" />
+    <title>Book Store</title>
+  </head>
+  <body>
+    <div class="container">
+        <%- include('../partials/navbar.ejs') %>
+
+        <center>
+          <div class="form-container">
+
+            <h1>Sign Up</h1>
+            <form action="/signup" method="post">
+                <input type="text" placeholder="Enter Your Name"  name="inputname" id="form-input-name">
+                <input type="email" placeholder="Enter Your Email" name="loginemail" id="login-email-input">
+                <input type="password" placeholder="Enter Your Password" name="loginpassword" id="login-password-input">
+                <button class="login-btn" type="submit">Sign Up</button>
+            </form>
+            <a href="/login">Already Register?</a>
+          </div>
+        </center>
+     
+
+      <hr class="footer-hr" />
+      <%- include('../partials/footer.ejs') %>
+    </div>
+  </body>
+  <script src="/src/login-forgot-singup.js"></script>
+</html>
