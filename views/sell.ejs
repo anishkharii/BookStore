@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="../img/books.png" type="image/x-icon" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -11,48 +18,70 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="/style/style.css" /> 
+    <link rel="stylesheet" href="/style/style.css" />
     <link rel="stylesheet" href="/style/sell.css" />
     <title>Book Store</title>
   </head>
   <body>
     <div class="container">
-        <%- include('../partials/navbar.ejs') %>
+      <%- include('../partials/navbar.ejs') %>
 
-<div class="sell-body">
-    <div class="book-list">
-        <p>Already In Sell Books</p>
-        <ul>
-          <% if (locals.books) { %>
-           <% books.forEach(element => { %>
-            <li><span><%= element.bookname %></span> <span>Price:<%= element.price %></span><span><i id="updatebook" class="fa-regular fa-pen-to-square"></i><i  id="deletebook" class="fa-solid fa-trash"></i></span></li>
-           <% }) %>
-          <% }else{ %>
-              <p>No Books</p>
+      <div class="sell-body">
+        <div class="book-list">
+          <p>Already In Sell Books</p>
+          <ul>
+            <% if (locals.books) { %> <% books.forEach(element => { %>
+            <li>
+              <span><%= element.bookname %></span>
+              <span>Price:<%= element.price %></span
+              ><span
+                ><i id="updatebook" class="fa-regular fa-pen-to-square"></i
+                ><i id="deletebook" class="fa-solid fa-trash"></i
+              ></span>
+            </li>
+            <% }) %> <% }else{ %>
+            <p>No Books</p>
             <% } %>
-          <!-- <li><span>Book Name</span> <span>Price:</span><span><a href="/updatebook" class="updatebook" ><i class="fa-regular fa-pen-to-square"></i></a><a  class="deletebook" ><i class="fa-solid fa-trash"></i></a></span></li>
+            <!-- <li><span>Book Name</span> <span>Price:</span><span><a href="/updatebook" class="updatebook" ><i class="fa-regular fa-pen-to-square"></i></a><a  class="deletebook" ><i class="fa-solid fa-trash"></i></a></span></li>
             <li><span>Book Name</span> <span>Price:</span><span><a class="updatebook"><i class="fa-regular fa-pen-to-square"></i></a><a  class="deletebook"><i class="fa-solid fa-trash"></i></a></span></li> -->
-
-      </ul> 
-    </div>
-    <hr>
-    <div class="add-new-book">
-     
-    <h1>Add New Book</h1>
-        <form action="/addbook" method="post" enctype="multipart/form-data">
-            <input type="text" name="bookname" placeholder="Enter A Book Name" id="bookname">
-            <input type="number" name="price" placeholder="Enter A price Of Book" id="price">
-            <input type="text" name="authorname" placeholder="Enter A Author Name" id="authorname">
-            <input type="file" placeholder="Upload image" name="inputimg" id="inputimg">
+          </ul>
+        </div>
+        <hr />
+        <div class="add-new-book">
+          <h1>Add New Book</h1>
+          <form action="/addbook" method="post" enctype="multipart/form-data">
+            <input
+              type="text"
+              name="bookname"
+              placeholder="Enter A Book Name"
+              id="bookname"
+            />
+            <input
+              type="number"
+              name="price"
+              placeholder="Enter A price Of Book"
+              id="price"
+            />
+            <input
+              type="text"
+              name="authorname"
+              placeholder="Enter A Author Name"
+              id="authorname"
+            />
+            <input
+              type="file"
+              placeholder="Upload image"
+              name="inputimg"
+              id="inputimg"
+            />
             <button id="submitbtn" type="submit">submit</button>
-        </form>
-    </div>
-</div>
+          </form>
+        </div>
+      </div>
       <hr class="footer-hr" />
       <%- include('../partials/footer.ejs') %>
     </div>
   </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="/src/sell.js"></script>
   <script src="/src/updatebook.js"></script>
   <script src="/index.js"></script>

@@ -7,6 +7,8 @@ const app = express()
 const bcrypt = require('bcrypt')
 const uploads = require('./public/src/multer')
 const saltRounds = 10;
+
+
 app.use(express.static('public'));
 app.use(bodyparser.urlencoded({ extended: true }))
 app.use(bodyparser.json())
@@ -158,6 +160,19 @@ app.post('/forgot', async (req, res) => {
 app.post('/addbook', uploads.single('inputimg'), async (req, res) => {
     res.redirect('/sell')
 })
+
+
+
+const addtocartbookname = require('./public/src/buy')
+console.log(addtocartbookname)
+
+
+
+
+
+
+
+
 app.listen(3000, () => {
     console.log("Server Started on port 3000")
 })

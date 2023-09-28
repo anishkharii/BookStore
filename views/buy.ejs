@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="../img/books.png" type="image/x-icon" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -20,11 +21,10 @@
       <%- include('../partials/navbar.ejs') %>
 
       <div class="buy-book-cont">
-        <% if (locals.books) { %>
-           <% books.forEach(element => { %>
+        <% if (locals.books) { %> <% books.forEach(element => { %>
         <div class="book">
-          <img src= "/uploads/<%= element.imgpath %>"alt="not rendre" />
-          <p><%= element.bookname %></p>
+          <img src="/uploads/<%= element.imgpath %>" alt="not rendre" />
+          <p value="<%= element.bookname %>"><%= element.bookname %></p>
           <p>Price : <%= element.price %></p>
           <p><%= element.authorname %></p>
           <p>
@@ -32,10 +32,10 @@
             ><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i
             ><i class="fa-regular fa-star"></i>
           </p>
-          <form action="/notdefined" method="post">
-            <button type="submit">Buy</button
-            ><button type="submit">Add To Cart</button>
-          </form>
+          <div class="btn-div">
+            <button class="buy-btn" type="submit">Buy</button>
+            <button type="submit">Add To Cart</button>
+          </div>
         </div>
         <% }) %> <% }else{ %>
         <p>NO Book in Sell</p>
@@ -45,6 +45,6 @@
       <%- include('../partials/footer.ejs') %>
     </div>
   </body>
+
   <script src="/src/buy.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </html>

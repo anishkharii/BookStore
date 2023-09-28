@@ -20,3 +20,9 @@ window.onclick = function (event) {
         }
     }
 }
+let data
+let buybtn = document.getElementsByClassName('buy-btn')
+buybtn.addEventListener('click', function (event) {
+    data = event.target.parentNode.parentNode
+    console.log(data)
+})
