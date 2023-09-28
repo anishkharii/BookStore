@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Average&family=Kanit:wght@200&family=Montserrat:wght@100;500&family=Raleway:wght@100&family=Roboto:wght@100&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Average&family=Kanit:wght@200&family=Montserrat:wght@100;200;500&family=Raleway:wght@100&family=Roboto:wght@100&family=Ubuntu:wght@300&display=swap');
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-new-book {
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+#bookname,
+#price,
+#authorname {
+    background: transparent;
+    margin: 10px;
+    border: 2px solid white;
+    border-radius: 8px;
+    width: 335px;
+    height: 35px;
+    padding-left: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-size: medium;
+}
+
+.sell-body {
+    transition: 1s;
+}
+
+#inputimg {
+    font-family: 'Montserrat', sans-serif;
+    margin: 15px;
+    font-size: medium;
+    margin-left: 32px;
+}
+
+hr {
+    margin: 35px;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+}
+
+button {
+    width: 100px;
+    margin: 15px;
+    background: black;
+    border-radius: 20px;
+    border-color: solid transparent 2px;
+    height: 41px;
+    font-size: 17px;
+    cursor: pointer;
+    color: white;
+    font-size: larger;
+}
+
+.book-list p {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-size: x-large;
+}
+
+.sell-body-m {
+    transition: 1s;
+    margin-top: 235px;
+}
+
+.book-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+.book-list ul {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    list-style-type: none;
+
+}
+
+.book-list ul li {
+    border: 2px solid white;
+}
+
+.book-list ul li {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    padding: 6px;
+    border-radius: 7px;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.form-span {
+    display: flex;
+}
+
+i {
+    margin: 0 13px;
+    cursor: pointer;
+}

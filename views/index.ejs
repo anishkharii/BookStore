@@ -26,6 +26,18 @@
             <li><a href="/sell">Sell</a></li>
             <li><a href="/buy">Buy</a></li>
             <li><a href="/contactus">Contact Us</a></li>
+      
+              <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn"><i class="fa-regular fa-user"></i>Profile</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="/logout">Log Out</a>
+    <a href="/delete">Delete Account</a>
+    <a href="/viewcart">View Cart</a>
+  </div>
+</div>
+
+            </li>
+
           </ul>
         </div>
 
@@ -49,12 +61,8 @@
             magic that only books can offer.
           </p>
           <div class="btn-div">
-            <form action="/login" method="get">
-              <button type="submit">Log In</button>
-            </form>
-            <form action="/signup" method="post">
-              <button type="submit">Sign-Up</button>
-            </form>
+              <button type="submit"><a href="/login">Log In</a></button>
+              <button type="submit"><a href="/signup">Sign-Up</a></button>
           </div>
         </div>
 

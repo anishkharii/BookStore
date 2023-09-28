@@ -21,11 +21,15 @@
 
         <center>
           <div class="form-container">
-
             <h1>login</h1>
             <form action="/login" method="post">
                 <input type="email" placeholder="Enter Your Email" name="loginemail" id="login-email-input">
                 <input type="password" placeholder="Enter Your Password" name="loginpassword" id="login-password-input">
+                <% if (locals.errormsg) { %>
+                 <p class="errorp"><%= errormsg %></p>
+                <% }else{ %>
+                  <p></p>
+                  <% } %>
                 <a href="/forgot">Forgot Password?</a>
                 <button class="login-btn" type="submit">Login</button>
             </form>

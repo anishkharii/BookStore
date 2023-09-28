@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Average&family=Kanit:wght@200&family=Montserrat:wght@100;500&family=Raleway:wght@100&family=Roboto:wght@100&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Average&family=Kanit:wght@200&family=Montserrat:wght@100;200;500&family=Raleway:wght@100&family=Roboto:wght@100&family=Ubuntu:wght@300&display=swap');
+
+body {
+    width: 100vw;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.book {
+    border: 2px solid white;
+    width: 284px;
+    height: 440px;
+    border-radius: 10px;
+    margin: 30px;
+}
+
+.book img {
+    width: 284px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+button {
+    width: 112px;
+    margin: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: medium;
+}
+
+.book p {
+    margin-top: 6px;
+    margin-left: 14px;
+    font-size: large;
+    color: white;
+}
+
+.buy-book-cont {
+    transition: 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+
+.buy-book-cont-m {
+    margin-top: 230px;
+    transition: 1s;
+}
+
+.cart-hr {
+    margin: 20px 100px;
+}

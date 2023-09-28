@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Average&family=Kanit:wght@200&family=Montserrat:wght@100;200;500&family=Raleway:wght@100&family=Roboto:wght@100&family=Ubuntu:wght@300&display=swap');
-#Forgot-email-input ,#Forgot-password-input ,#Forgot-input-name{
+
+#Forgot-email-input,
+#Forgot-password-input,
+#Forgot-input-name {
     background: transparent;
     margin: 10px;
     border: 2px solid white;
@@ -9,24 +12,26 @@
     padding-left: 8px;
     font-family: 'Montserrat', sans-serif;
     color: #fff;
- 
+
 }
-.form-container a{
+
+.form-container a {
     color: white;
     text-decoration: none;
     margin-top: 20px;
     font-family: 'Montserrat', sans-serif;
- cursor: pointer;
+    cursor: pointer;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: 'Montserrat', sans-serif;
 }
-.form-container{
+
+.form-container {
     transition: 1s;
     font-family: 'Montserrat', sans-serif;
     width: 401px;
@@ -36,30 +41,38 @@ form{
     justify-content: center;
     flex-direction: column;
     background: transparent;
-    background-color: #000;
     color: #fff;
-    opacity: 0.3;
+    background: rgba(8, 2, 2, 0.3);
     border-radius: 13px;
 }
-.Forgot-btn{
+
+.Forgot-btn {
     margin: 22px;
     font-family: 'Montserrat', sans-serif;
-    border-color:black ;
+    border-color: black;
 }
-.form-container hr{
+
+.form-container hr {
     margin: 0;
 
 }
-.form-container h1{
+
+.form-container h1 {
     font-family: 'Montserrat', sans-serif;
     margin: 20px;
 }
-.form-container p{
+
+.form-container p {
     font-family: 'Montserrat', sans-serif;
     margin: 15px;
 }
 
-.form-container-res{
+.form-container-res {
     transition: 1s;
     margin-top: 250px !important;
+}
+
+.errorpara {
+    color: red;
+    opacity: 0.6;
 }

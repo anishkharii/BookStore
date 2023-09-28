@@ -1,17 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Average&family=Kanit:wght@200&family=Montserrat:wght@100;500&family=Raleway:wght@100&family=Roboto:wght@100&family=Ubuntu:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Average&family=Kanit:wght@200&family=Montserrat:wght@100;200;500&family=Raleway:wght@100&family=Roboto:wght@100&family=Ubuntu:wght@300&display=swap');
+
 * {
   margin: 0;
   padding: 0;
 }
+
 .container {
   background: linear-gradient(#06142e, #183358, #473e66, #bd8388, #f5d7d8);
   height: 100%;
 }
+
 h3 {
   font-size: 23px;
   margin-left: 20px;
 }
+
 .navbar {
   display: flex;
   color: white;
@@ -20,22 +24,28 @@ h3 {
   height: 100px;
   font-family: 'Montserrat', sans-serif;
 }
+
 .center ul li {
   list-style-type: none;
   margin: 0px 10px;
 }
+
 .center ul li a {
   list-style-type: none;
   margin: 0px 10px;
   color: #fff;
 }
+
 .center ul {
   display: flex;
+  align-items: center;
 }
+
 .right {
   margin-right: 20px;
   display: flex;
 }
+
 .right button {
   height: 30px;
   width: 65px;
@@ -43,6 +53,7 @@ h3 {
   border-radius: 20px;
   cursor: pointer;
 }
+
 .center-body {
   display: flex;
   color: #fff;
@@ -61,11 +72,13 @@ h3 {
 #book-img {
   opacity: 0.5;
 }
+
 .center-body div h1 {
   font-size: 40px;
   font-family: 'Raleway', sans-serif;
   margin: 15px;
 }
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -73,17 +86,25 @@ h3 {
   justify-content: space-between;
   font-family: 'Montserrat', sans-serif;
 }
+
 .icon {
   margin: 15px 0;
- 
+
 }
+
 .icon i {
   font-size: 30px;
   margin: 0 10px;
 }
+
 .icon a {
   color: black;
 }
+
+.nav-ul {
+  margin-right: 10px;
+}
+
 .footer-item ul {
   list-style: none;
   display: flex;
@@ -91,11 +112,13 @@ h3 {
   font-size: 20px;
   margin: 15px 0;
 }
+
 .footer p {
   margin-bottom: 10px;
   font-size: 20px;
   margin: 15px 0;
 }
+
 ul li a {
   text-decoration: none;
   color: white;
@@ -105,6 +128,13 @@ ul li a {
   display: flex;
   margin: 15px;
 }
+
+.fa-bars:before,
+.fa-navicon:before {
+  content: "\f0c9";
+  margin-right: 15px;
+}
+
 button {
   width: 100px;
   margin: 10px;
@@ -129,6 +159,7 @@ button {
   cursor: pointer;
   display: none;
 }
+
 .footer-hr {
   margin: 15px 100px;
   color: #06142e !important;
@@ -136,44 +167,98 @@ button {
   background: #06142e !important;
   margin-bottom: 20px;
 }
+
+.btn-div a {
+  text-decoration: none;
+  color: white;
+}
+
+.errorp {
+  color: red;
+}
+
+.fa-user {
+  margin: 5px;
+}
+
+.profile-ul {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-ul-hidden {
+  display: flex;
+  visibility: hidden;
+
+}
+
+.profile-con {
+  display: inline-block;
+  margin: 0;
+}
+
+.profile-li {
+  cursor: pointer;
+
+}
+
+.profile-ul li {
+  margin: 10px;
+}
+
 @media screen and (max-width: 680px) {
   #book-img {
     display: none;
   }
 
+  .btn-div {
+    display: flex;
+    margin: 15px;
+    align-items: center;
+    justify-content: center;
+  }
+
   .center-body p {
     margin-right: 0px;
   }
+
   .nav-ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: absolute;
     background-color: transparent;
     left: -100%;
     margin-top: 7vh;
     color: white;
     width: 100vw;
   }
+
   .center-m {
-    margin-top: 210px !important;
+    margin-top: 280px !important;
     transition: 0.5s;
   }
+
   .center ul li {
     margin: 20px 0;
   }
+
   .center ul li a {
     margin: 20px 0;
     color: white;
   }
+
   .fa-bars {
     display: block;
-    margin: 0 15px;
+    margin: 0 15px !important;
   }
+
   .activeul {
     left: 0% !important;
     transition: 1s;
   }
+
   .footer-item ul {
     display: flex;
     flex-direction: column;
@@ -182,25 +267,76 @@ button {
     margin: 20px 0;
   }
 }
+
+
 @media screen and (max-width: 1168px) and (min-width: 1049px) {
   #book-img {
     width: 400px;
   }
 }
+
 @media screen and (max-width: 1168px) {
   #book-img {
     width: 470px;
   }
 }
+
 @media screen and (max-width: 1063px) {
   #book-img {
     width: 375px;
   }
 }
+
 @media screen and (max-width: 900px) {
   #book-img {
     margin-top: 39px;
     width: 310px;
     height: 531px;
   }
+}
+
+
+
+
+.dropbtn {
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  min-width: 126px;
+  right: 0px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: white;
+}
+
+.show {
+  display: block;
 }

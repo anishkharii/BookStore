@@ -27,9 +27,22 @@
                 <input type="text" placeholder="Enter Your Name"  name="inputname" id="form-input-name">
                 <input type="email" placeholder="Enter Your Email" name="loginemail" id="login-email-input">
                 <input type="password" placeholder="Enter Your Password" name="loginpassword" id="login-password-input">
-                <button class="login-btn" type="submit">Sign Up</button>
+
+                <% if (locals.errormsg) { %>
+                  <p class="errorp"><%= errormsg %></p>
+                <% } %>
+
+               
+                <button class="signup-btn" type="submit">Sign Up</button>
+
+      
             </form>
             <a href="/login">Already Register?</a>
+
+            <form action="/vcvcvc" method="post">
+              <button id="google-submit" type="submit"><i id="all-logo" class="fa-brands fa-google"></i>signUp With Google</button> 
+              <button id="github-submit" type="submit"><i id="all-logo" class="fa-brands fa-github"></i>signUp With Github</button>
+            </form>
           </div>
         </center>
      
@@ -38,5 +51,6 @@
       <%- include('../partials/footer.ejs') %>
     </div>
   </body>
+ 
   <script src="/src/login-forgot-singup.js"></script>
 </html>

@@ -27,9 +27,17 @@
                 <input type="email" placeholder="Enter Your Email" name="Forgotemail" id="Forgot-email-input">
                 <input type="password" placeholder="Enter New Password" name="Forgotpassword1" id="Forgot-password-input">
                  <input type="password" placeholder="Re-Enter New Password" name="Forgotpassword2" id="Forgot-password-input">
+                 
+                  <% if (locals.errormassage) { %>
+                   <p class="errorpara"><%=locals.errormassage %></p>
+                  <% }else{ %>
+                    <p></p>
+                    <% }%>
+               
                 <button class="login-btn" type="submit">Submit</button>
             </form>
           </div>
+         
         </center>
      
 

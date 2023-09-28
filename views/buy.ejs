@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../img/books.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/style/style.css" />
+    <link rel="stylesheet" href="/style/buy.css" />
+    <title>Book Store</title>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('../partials/navbar.ejs') %>
+
+      <div class="buy-book-cont">
+        <% if (locals.books) { %>
+           <% books.forEach(element => { %>
+        <div class="book">
+          <img src= "/uploads/<%= element.imgpath %>"alt="not rendre" />
+          <p><%= element.bookname %></p>
+          <p>Price : <%= element.price %></p>
+          <p><%= element.authorname %></p>
+          <p>
+            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i
+            ><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i
+            ><i class="fa-regular fa-star"></i>
+          </p>
+          <form action="/notdefined" method="post">
+            <button type="submit">Buy</button
+            ><button type="submit">Add To Cart</button>
+          </form>
+        </div>
+        <% }) %> <% }else{ %>
+        <p>NO Book in Sell</p>
+        <% } %>
+      </div>
+      <hr class="footer-hr" />
+      <%- include('../partials/footer.ejs') %>
+    </div>
+  </body>
+  <script src="/src/buy.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</html>
