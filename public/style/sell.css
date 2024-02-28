@@ -28,8 +28,9 @@ form {
     height: 35px;
     padding-left: 8px;
     font-family: 'Montserrat', sans-serif;
-    color: #fff;
+    color: #8feeff !important;
     font-size: medium;
+
 }
 
 .sell-body {
@@ -41,6 +42,7 @@ form {
     margin: 15px;
     font-size: medium;
     margin-left: 32px;
+    margin-top: 3px;
 }
 
 hr {
@@ -49,14 +51,14 @@ hr {
 
 h1 {
     font-family: 'Montserrat', sans-serif;
-    color: #fff;
+    color: #8feeff;
 }
 
 button {
     width: 100px;
     margin: 15px;
     background: black;
-    border-radius: 20px;
+    border-radius: 10px;
     border-color: solid transparent 2px;
     height: 41px;
     font-size: 17px;
@@ -67,13 +69,13 @@ button {
 
 .book-list p {
     font-family: 'Montserrat', sans-serif;
-    color: #fff;
+    color: #8feeff;
     font-size: x-large;
 }
 
 .sell-body-m {
     transition: 1s;
-    margin-top: 235px;
+    margin-top: 284px;
 }
 
 .book-list {
@@ -113,4 +115,276 @@ button {
 i {
     margin: 0 13px;
     cursor: pointer;
+}
+
+.bookname {
+    color: black;
+}
+
+.bookname {
+    margin: 20px 0px;
+}
+
+#newbook,
+#newprice,
+#newauthor {
+    background: transparent;
+    margin: 10px;
+    border: 2px solid white;
+    border-radius: 0;
+    width: 335px;
+    height: 35px;
+    padding-left: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #8feeff !important;
+    font-size: medium;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 5px;
+}
+
+.newhr {
+    margin: 35px;
+}
+
+.booknamespan {
+    width: 120px;
+}
+
+.dropdownupdate {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content-update {
+    display: none;
+    position: absolute;
+    background: white;
+    width: 500px;
+    height: 500px;
+    right: 0%;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content-update a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownupdate a:hover {
+    background-color: white;
+}
+
+.showupdate {
+    display: block;
+}
+
+.dropupdatebtn {
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+#deletebookbtn {
+    border: none !important;
+    background: transparent !important;
+    margin: 0px;
+    width: 70px;
+    padding: 0;
+}
+
+#updatedelete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nobookp {
+    margin: 19px 0;
+}
+
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: transparent;
+    background-image: none;
+    flex: 1;
+    padding: 0 .5em;
+    color: #defaf8;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.select {
+    position: relative;
+    display: flex;
+    width: 345px;
+    height: 35px;
+    line-height: 3;
+    background: transparent;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px solid white;
+}
+
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    bottom: -7px;
+    right: 10px;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease;
+}
+
+
+
+.select:hover::after {
+    color: #defaf8;
+
+}
+
+[type="file"] {
+    color: #defaf8;
+
+
+}
+
+[type="file"]::-webkit-file-upload-button {
+    background: transparent;
+    border-radius: 4px;
+    color: #defaf8;
+    cursor: pointer;
+    font-size: 12px;
+    outline: none;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    transition: all 1s ease;
+    border: 2px solid white;
+
+}
+
+[type="file"]::-webkit-file-upload-button:hover {
+    background: #fff;
+    border: 2px solid #535353;
+    color: #000;
+}
+
+@media screen and (max-width: 560px) {
+    .select {
+
+        width: 408px;
+        height: 35px;
+        line-height: 2.55;
+    }
+
+    .book-list ul li {
+        height: 35px;
+        width: 400px;
+    }
+
+    #bookname,
+    #price,
+    #authorname {
+        height: 35px;
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .book-list ul li {
+        height: 30px;
+        width: 343px;
+    }
+
+    .select {
+
+        width: 349px;
+        height: 33px;
+        line-height: 2.46;
+    }
+
+    #bookname,
+    #price,
+    #authorname {
+        height: 30px;
+        width: 343px;
+    }
+
+}
+
+@media screen and (max-width: 390px) {
+    .book-list ul li {
+        width: 285px;
+    }
+
+    #bookname,
+    #price,
+    #authorname {
+        width: 285px;
+    }
+
+    .select {
+
+        width: 294px;
+        height: 28px;
+    }
+
+    #inputimg {
+
+        margin-left: 85px;
+    }
+}
+
+
+#close-btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 47px;
+    background: none;
+    color: black;
+    border: none;
+    font-size: 32px;
+    right: 0;
+}
+
+
+input::placeholder {
+    color: #defaf8;
+    opacity: 1;
+}
+
+select {
+    color: #defaf8;
+}
+
+select:focus {
+    background-color: #000;
+    color: #defaf8;
+}
+
+input[type='file']::placeholder {
+    color: #fff;
 }

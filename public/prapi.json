@@ -1,0 +1,56 @@
+[
+  {
+    "bookname": "ds",
+    "price": "45",
+    "authorname": "jay",
+    "imgpath": "1707060484123-35844716.jpg",
+    "selleremail": "bhautikkotadiya@gmail.com",
+    "booktype": "Essays",
+    "quantity": "3"
+  },
+  {
+    "bookname": "Java",
+    "price": "90",
+    "authorname": "Manish",
+    "imgpath": "1707110161709-images (3).jpeg",
+    "selleremail": "bhautikkotadiya@gmail.com",
+    "booktype": "Memair",
+    "quantity": "10"
+  },
+  {
+    "bookname": "C++",
+    "price": "50",
+    "authorname": "abc",
+    "imgpath": "1707110633886-35844716.jpg",
+    "selleremail": "bhautikkotadiya@gmail.com",
+    "booktype": "Classics",
+    "quantity": "5"
+  },
+  {
+    "bookname": " data structure",
+    "price": "20",
+    "authorname": "abc",
+    "imgpath": "1707110946416-images (1).jpeg",
+    "selleremail": "bhautikkotadiya@gmail.com",
+    "booktype": "Mystery",
+    "quantity": "10"
+  },
+  {
+    "bookname": "Java",
+    "price": "78",
+    "authorname": "not Known",
+    "imgpath": "1707313452941-Screenshot_2024-02-06-21-36-04-64_e2d5b3f32b79de1d45acd1fad96fbb0f.jpg",
+    "selleremail": "bhautikkotadiya9694@gmail.com",
+    "booktype": "Poetry",
+    "quantity": "10"
+  },
+  {
+    "bookname": "suhay",
+    "price": "40",
+    "authorname": "y6y6y",
+    "imgpath": "1707924858886-51seH-SzjuL.jpg",
+    "selleremail": "bhautikkotadiya9694@gmail.com",
+    "booktype": "Self-help",
+    "quantity": "54"
+  }
+]

@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="../img/books.png" type="image/x-icon" />
-    
-  <script
-  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -19,38 +19,38 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="/style/style.css" />
+    <link rel="stylesheet" href="/style/flash-msg.css" />
     <title>Book Store</title>
   </head>
   <body>
     <div class="container">
       <div class="navbar">
         <div class="left">
-          <h3>Book Store</h3>
+          <a href="/home"> <i class="fa-solid fa-book"></i> </a>
         </div>
         <div class="center">
           <ul class="nav-ul">
-            <li><a href="/home">Home</a></li>
-            <li><a href="/sell">Sell</a></li>
-            <li><a href="/buy">Buy</a></li>
-            <li><a href="/contactus">Contact Us</a></li>
-      
-              <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn"><i class="fa-regular fa-user"></i>Profile</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="/logout">Log Out</a>
-    <a href="/delete">Delete Account</a>
-    <a href="/viewcart">View Cart</a>
-  </div>
-</div>
-
-            </li>
-
+            <li><a href="/home">HOME</a></li>
+            <li><a href="/sell">SELL</a></li>
+            <li><a href="/buy">BOOKS</a></li>
+            <li><a href="/login">LOGIN</a></li>
+            <li><a href="/contactus">CONTACT US</a></li>
           </ul>
         </div>
-
+        <div class="last-div-nav">
+          <a href="/profile"><i class="fa-regular fa-user"></i></a>
+          <a href="/viewcart"><i class="fa-solid fa-cart-shopping"></i></a>
+          <a href="/wishlist"><i class="fa-regular fa-heart"></i></a>
+          <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+        </div>
         <i class="fa-solid fa-bars"></i>
       </div>
+      <% if ( expressFlash.length > 0 ) { %>
+      <p class='<%= class_name %>'><%= expressFlash %></p>
+      <% } %>
+       
       <div class="center-body">
+       
         <div class="body-text">
           <h1>Welcome To Book Store!!</h1>
           <p>
@@ -67,9 +67,13 @@
             and satisfy every literary craving. Start exploring and uncover the
             magic that only books can offer.
           </p>
-          <div class="btn-div">
-              <button type="submit"><a href="/login">Log In</a></button>
-              <button type="submit"><a href="/signup">Sign-Up</a></button>
+          <div class="style-h1">
+            <h1>Buy <span>your</span></h1>
+            <h1>favorite <span>Books</span></h1>
+            <h1>from <span>Here</span></h1>
+            <a href="/buy"
+              >SHOP NOW <i class="fa-solid fa-arrow-right-long"></i
+            ></a>
           </div>
         </div>
 
@@ -78,16 +82,20 @@
       <hr class="footer-hr" />
       <div class="footer">
         <div class="icon">
-          <a href="https://www.instagram.com/x.__bk_/"> <i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.instagram.com/x.__bk_/">
+            <i class="fa-brands fa-instagram"></i
+          ></a>
           <a href=""> <i class="fa-brands fa-twitter"></i></a>
-          <a href="https://github.com/BHAUTIK9694"> <i class="fa-brands fa-github"></i></a>
+          <a href="https://github.com/BHAUTIK9694">
+            <i class="fa-brands fa-github"></i
+          ></a>
           <a href=""> <i class="fa-brands fa-facebook"></i></a>
         </div>
         <div class="footer-item">
           <ul>
             <li><a href="/home">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/home">About</a></li>
+            <li><a href="/contactus">Contact Us</a></li>
             <li><a href="/review">Review</a></li>
             <li><a href="/policy">Privacy Policy</a></li>
           </ul>

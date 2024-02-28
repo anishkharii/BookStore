@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Clients Review UI </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/style/review.css">
+        <link rel="stylesheet" href="/style/style.css">
+        <link rel="stylesheet" href="/style/flash-msg.css" />
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <%- include('../partials/navbar.ejs') %>
+        <hr class="nav-hr">
+        <% if ( expressFlash.length > 0 ) { %>
+          <p class='<%= class_name %>'> <%= expressFlash %></p>
+          <% } %>
+<h2 id="fh2">WE APPRECIATE YOUR REVIEW!</h2>
+<h6 id="fh6">Your review will help us to improve our web hosting quality products, and customer services.</h6>
+
+
+<form id="feedback" method="post" action="/review/submit">
+  <div class="pinfo">Your personal info</div>
+  
+<div class="form-group">
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-user"></i></span>
+  <input  name="username" placeholder="Enter Your Username" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+    <input name="useremail" type="email" class="form-control" placeholder="Enter Your Email">
+     </div>
+  </div>
+</div>
+
+
+ <div class="pinfo">Rate our overall services.</div>
+  
+
+<div class="form-group">
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-heart"></i></span>
+   <select name="rating" class="form-control" id="rate">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    </div>
+  </div>
+</div>
+
+ <div class="pinfo">Write your feedback.</div>
+  
+
+<div class="form-group">
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+  <textarea name="reviewtext" class="form-control" id="review" rows="3"></textarea>
+ 
+    </div>
+  </div>
+</div>
+
+ <button type="submit" class="btn btn-primary">Submit</button>
+
+
+</form>
+        <div class="container-review">
+            <h2> Our Happy Clients </h2>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, atque? Repudiandae
+                possimus asperiores hic nemo id a molestiae minus impedit!</p>
+        
+            <div class="reviewSection">
+                    <% if (locals.reviewarr) { %>
+
+                        <% reviewarr.forEach(element => { %>
+                            <div class="reviewItem">
+                                <div class="top">
+                                    <div class="clientImage">
+                                        <img src="" alt="">
+                                        <span><%= element.username %></span>
+                                    </div>
+                                    <ul class="review-star-ul">
+                                    
+                                    </ul>
+                                </div>
+                                <article>
+                                    <p class="review"><%= element.reviewmsg %></p>
+                                    <p><%= element.date %></p>
+                                </article>
+                            </div>
+                        <% }) %>
+                    <% } %>
+                
+    
+            
+            </div>
+        </div>
+
+
+        <hr class="footer-hr" />
+        <%- include('../partials/footer.ejs') %>
+    </div>
+   
+</body>
+<script src="/src/review.js"></script>
+</html>

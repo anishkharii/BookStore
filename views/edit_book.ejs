@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../img/books.png" type="image/x-icon" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/style/flash-msg.css" />
+
+    <link rel="stylesheet" href="/style/style.css" />
+    <link rel="stylesheet" href="/style/sell.css" />
+    <style>
+      input::placeholder{
+        color: white !important ;
+        
+      }
+      textarea:focus, input:focus {
+        color: #fff !important;
+      }
+    
+    input, select, textarea{
+        color: #fff !important;
+    }
+    </style>
+    <title>Book Store</title>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('../partials/navbar.ejs') %>
+      <% if ( expressFlash.length > 0 ) { %>
+        <p class='<%= class_name %>'><%= expressFlash %></p>
+        <% } %>
+      <div class="sell-body">
+        <hr />
+        <div class="add-new-book">
+          <h1>Edit Book : <%= bookname %></h1>
+          <form action="/update/data/<%= bookname %>" method="post" >
+            <input
+            required
+              type="text"
+              name="bookname"
+              placeholder="Enter A Book Name"
+              id="bookname"
+              value=<%= bookdetail[0]['bookname'] %>
+            />
+            <input
+            required
+              type="number"
+              name="price"
+              placeholder="Enter A price Of Book"
+              id="price"
+              value=<%= bookdetail[0]['price'] %>
+
+            />
+            <input
+            required
+              type="number"
+              name="quantity"
+              placeholder="Enter A Quantity Of Book"
+              id="price"
+              value=<%= bookdetail[0]['quantity'] %>
+
+            />
+            <div class="select" >
+              <select required name="booktype"  value=<%= bookdetail[0]['booktype'] %> class="formet" id="book-type" aria-placeholder="Catagory">
+                <option value="none">Type Of Books</option>
+                <option value="Horror">Horror</option>
+                <option value="Rommance">Rommance</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Poetry">Poetry</option>
+                <option value="Essays">Essays</option>
+                <option value="Self-help">Self-help</option>
+                <option value="Memair">Memair</option>
+                <option value="Classics">Classics</option>
+                <option value="Cookbooks">Cookbooks</option>
+              </select>
+            </div>
+
+            <input
+            required
+              type="text"
+              name="authorname"
+              placeholder="Enter A Author Name"
+              id="authorname"
+              value=<%= bookdetail[0]['authorname'] %>        
+            />
+           
+            <button id="submitbtn" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      <hr class="footer-hr" />
+      <%- include('../partials/footer.ejs') %>
+    </div>
+  </body>
+  <script src="/src/sell.js"></script>
+  <script src="/src/updatebook.js"></script>
+
+</html>

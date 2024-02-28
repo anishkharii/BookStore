@@ -13,12 +13,16 @@
     />
     <link rel="stylesheet" href="/style/style.css" /> 
     <link rel="stylesheet" href="/style/signup.css" />
+    <link rel="stylesheet" href="/style/flash-msg.css" />
+
     <title>Book Store</title>
   </head>
   <body>
     <div class="container">
         <%- include('../partials/navbar.ejs') %>
-
+        <% if ( expressFlash.length > 0 ) { %>
+          <p class='<%= class_name %>'><%= expressFlash %></p>
+          <% } %>
         <center>
           <div class="form-container">
 
@@ -39,10 +43,11 @@
             </form>
             <a href="/login">Already Register?</a>
 
-            <form action="/vcvcvc" method="post">
+            <form action="/google" method="get">
               <button id="google-submit" type="submit"><i id="all-logo" class="fa-brands fa-google"></i>signUp With Google</button> 
-              <button id="github-submit" type="submit"><i id="all-logo" class="fa-brands fa-github"></i>signUp With Github</button>
+             
             </form>
+            <button id="github-submit" type="submit"><i id="all-logo" class="fa-brands fa-github"></i>signUp With Github</button>
           </div>
         </center>
      

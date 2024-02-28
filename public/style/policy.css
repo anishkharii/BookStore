@@ -1,0 +1,38 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.nav-hr {
+    transition: 1.2s;
+}
+
+.margin-hr {
+    margin-top: 270px;
+    transition: 1.2s;
+}
+
+.policy-container {
+    margin: 20px;
+    padding: 10px;
+}
+
+h2 {
+    color: #8feeff;
+}
+
+p {
+    text-align: justify;
+    margin: 10px 0px;
+    color: #defaf8;
+
+}
+
+.header-p {
+    color: #8feeff;
+}
+
+li {
+    color: #defaf8;
+
+}

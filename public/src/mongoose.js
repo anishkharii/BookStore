@@ -1,12 +1,25 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://127.0.0.1:27017/StudentDb').then(() => { console.log("Done") })
+mongoose.connect(process.env.MONGO_URL).then(() => { console.log("Done") })
+
+
+// mongoose.connect(process.env.MONGO_URL).then(() => { console.log("Done") })
+
+
 const Scema = new mongoose.Schema({
     username: String,
+    googleid: String,
     email: String,
     password: String,
     token: String,
-    books: Array
+    books: Array,
+    cart: Array,
+    address: Array,
+    buy: Array,
+    sell: Array,
+    order: Array,
+    wishlist: Array,
+    personal_detail: Array,
 })
 
 const StudentDb = new mongoose.model("StudentDb", Scema)

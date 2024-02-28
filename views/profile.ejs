@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <link rel="shortcut icon" href="../img/books.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/style/style.css" />
+    <link rel="stylesheet" href="/style/profile.css" />
+    <link rel="stylesheet" href="/style/flash-msg.css" />
+
+    <title>Book Store</title>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('../partials/navbar.ejs') %>
+        <hr class="nav-hr">
+        <% if ( expressFlash.length > 0 ) { %>
+            <p class='<%= class_name %>'> <%= expressFlash %></p>
+            <% } %>
+        <div class="path-div">
+            <a href="/home">Home Pages</a>
+            <p>/</p>
+            <a class="color-a" href="/profile">Profile</a>
+        </div>
+        <h1>My Account</h1>
+        <div class="profile-partision">
+            <div class="profile-partision-1">
+                <ul>
+                    <li><a href="/profile"> My Details</a></li>
+                    <li><a href="/address"> My Address Book</a></li>
+                    <li> <a href="/orderhistory">My Orders</a></li>
+                    <li> <a href="/sellhistory">My Sell History</a></li>
+                     <li> <a href="/buyhistory">My Buy History</a></li>
+                </ul>
+            </div>
+            <div class="profile-partision-2">
+                <h4 class="header-h4">My Details</h4>
+                <p class="profile-div-name">Personal Information</p>
+                <hr>
+                <div class="profilr-part-3">
+                    <div class="personal-info-div-1" >
+                        <p class="info-div">Personal information is a crucial aspect of e-commerce websites, playing a central role in facilitating transactions and providing personalized services. However, the collection, storage, and usage of personal information in e-commerce also raise important considerations regarding privacy, security, and ethical practices.
+                        </p>
+                    </div>
+                   
+                    <div class="personal-info-div-2-edit">
+                        <% if (personal_detail.length>0) { %>
+                            <form class="change-form" action="/name-info" method="post">
+                                <div class="input-div-name">
+                                    <input type="text" value=<%= personal_detail[0]['fname'] %> placeholder="First Name" name="first_name" id="input-firstname">
+                                    <input type="text" value=<%= personal_detail[0]['lname'] %> placeholder="Second Name" name="last_name" id="input-lastname">
+                                </div>
+                                <input type="date" value=<%= personal_detail[0]['birthdate'] %> placeholder="Date of Birth"  name="birthdatdate"  id="input-date">
+                                <input type="number" value=<%= personal_detail[0]['phone_number'] %> name="phonenumber" id="input-number" placeholder="Phone Number">
+                                <button>Save</button>
+                            </form>
+                        <% }else {%>
+                            <form class="change-form" action="/name-info" method="post">
+                                <div class="input-div-name">
+                                    <input type="text" placeholder="First Name" name="first_name" id="input-firstname">
+                                    <input type="text" placeholder="Second Name" name="last_name" id="input-lastname">
+                                </div>
+                                <input type="date" placeholder="Date of Birth"  name="birthdatdate"  id="input-date">
+                                <input type="number" name="phonenumber" id="input-number" placeholder="Phone Number">
+                                <button>Save</button>
+                            </form>
+                        <% } %>
+
+
+                       
+                    </div>
+                </div>
+                <p class="profile-div-name">E-mail Address</p>
+                <hr class="nav-hr">
+                <div class="profilr-part-3">
+                    <div class="personal-info-div-1"  >
+                        <p class="info-div">Email plays a crucial role in the success of an e-commerce website, serving as a powerful tool for communication, customer engagement, and marketing. Here are some key aspects of email in the context of an e-commerce platform
+                        </p>
+                    </div>
+                    
+                    <div class="personal-info-div-2" >
+                       
+                        <input type="email" value=<%= useremail %> id="input-email" name="email" placeholder="Email">
+                        
+                
+                    </div>
+                    <div class="personal-info-div-3" >
+
+                    </div>
+                </div>
+                <p class="profile-div-name">Password</p>
+                <hr>
+                <div class="profilr-part-3">
+                    <div class="personal-info-div-1" >
+                        <p class="info-div">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem saepe temporibus error ea quibusdam cumque neque blanditiis, vero ducimus est in. Porro amet, consequuntur voluptatem repellat sapiente tempora libero quasi.
+                        </p>
+                    </div>
+                    <div class="personal-info-div-2" >
+                        <form action="/forgot" method="get">
+                        <label for="password-1">Password</label>
+                        <input type="password" name="password-1" value="7845845" placeholder="Enter Password" id="input-password1">
+                        <label for="password-2">New Password</label>
+                        <input type="password" name="password-2" value="7845845"  placeholder="Re-Enter Password" id="input-reenter-password">
+                        <label for="password-3">Re Enter New Password</label>
+                        <input type="password" name="password-3" value="7845845"  placeholder="Enter Confirm Password" id="input-con-password">
+
+                        <button>Save</button>
+                    </form>
+
+                    </div>
+                 <div class="personal-info-div-3" >
+
+                 </div>
+                  </div>
+            
+            </div>
+        </div>
+      <hr class="footer-hr" />
+      <%- include('../partials/footer.ejs') %>
+    </div>   
+  </body>
+  <script src="/src/address.js"></script>
+
+</html>

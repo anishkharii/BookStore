@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid #000;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+.invoice-details {
+    margin-bottom: 20px;
+}
+
+.invoice-total {
+    text-align: right;
+    font-weight: bold;
+}
+
+button {
+    width: 100px;
+    margin: 10px;
+    background: black;
+    border-radius: 20px;
+    border-color: solid transparent 2px;
+    height: 41px;
+    font-size: 17px;
+    cursor: pointer;
+    color: white;
+    margin-top: 20px;
+    margin-left: 20px;
+}

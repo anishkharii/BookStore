@@ -20,12 +20,16 @@
     ></script>
     <link rel="stylesheet" href="/style/style.css" />
     <link rel="stylesheet" href="/style/forgot.css" />
+    <link rel="stylesheet" href="/style/flash-msg.css" />
+
     <title>Book Store</title>
   </head>
   <body>
     <div class="container">
       <%- include('../partials/navbar.ejs') %>
-
+      <% if ( expressFlash.length > 0 ) { %>
+        <p class='<%= class_name %>'><%= expressFlash %></p>
+        <% } %>
       <center>
         <div class="form-container">
           <h1>Forgot Password</h1>

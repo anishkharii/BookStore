@@ -59,6 +59,8 @@ form {
 .form-container h1 {
     font-family: 'Montserrat', sans-serif;
     margin: 20px;
+    color: #8feeff;
+
 }
 
 .form-container p {
@@ -66,10 +68,12 @@ form {
     margin: 15px;
 }
 
+
 .form-container-res {
     transition: 1s;
-    margin-top: 250px !important;
+    margin-top: 290px !important;
 }
+
 
 #google-submit,
 #github-submit {

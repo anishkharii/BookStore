@@ -34,7 +34,7 @@ form {
     width: 401px;
     display: flex;
     align-items: center;
-    height: 486px;
+    height: 564px;
     justify-content: center;
     flex-direction: column;
     background: transparent;
@@ -58,6 +58,8 @@ form {
 .form-container h1 {
     font-family: 'Montserrat', sans-serif;
     margin: 20px;
+    color: #8feeff;
+
 }
 
 .form-container p {
@@ -67,5 +69,20 @@ form {
 
 .form-container-res {
     transition: 1s;
-    margin-top: 250px !important;
+    margin-top: 290px !important;
+}
+
+
+#google-submit,
+#github-submit {
+    margin: 12px;
+    width: 235px;
+    background-color: #fff;
+    color: black;
+}
+
+#google-submit i,
+#github-submit i {
+
+    margin-right: 10px;
 }

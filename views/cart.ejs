@@ -20,18 +20,106 @@
     />
     <link rel="stylesheet" href="/style/style.css" />
     <link rel="stylesheet" href="/style/buy.css" />
+    <link rel="stylesheet" href="/style/cart.css" />
+    <link rel="stylesheet" href="/style/flash-msg.css" />
+
     <title>Book Store</title>
   </head>
   <body>
     <div class="container">
       <%- include('../partials/navbar.ejs') %>
-      <hr class="cart-hr" />
+      <hr class="nav-hr" />
+      <% if ( expressFlash.length > 0 ) { %>
+        <p class='<%= class_name %>'><%= expressFlash %></p>
+        <% } %>
+      <div class="cart-body">
+        <h1 class="heading-h1">Your Cart</h1>
 
-      <div class="cart-body"></div>
+        <div class="cart-item">
+        <% if (locals.books) { %>
+          <% books.forEach(element => { %>          
+            <div class="Book-detail">
+              <div>
+                  <img class="book-img-cart" src="/uploads/<%= element.imgpath %>" alt="No Image">               
+              </div>
+              <div class="book-detail-1">
+                <h3 class="bookname-h3"> <%= element.bookname %></h3>
+                <h6 class="cart-author">Written By <%= element.authorname %></h6>
+                <p class="delivered-p">Book are Written About a <%= element.booktype %></p>  
+                <p class="delivered-p">Delivered in 2-3 Working Days</p>  
+                <p class="rating-p"></p>
+                <hr class="order-summary-hr">
+               <div class="btn-div">
+
+                <form action="/wishlist/<%= element.bookname %>" method="get">
+                  <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                </form>
+                <form action="/remove/<%= element.bookname %>" method="get">
+                  <button class="remove-cart-btn"> <i class="fa-regular fa-trash-can"></i></button>
+                </form>
+               </div>
+               
+              </div>
+             <div class="book-detail-2">
+                <h2 class="book-price-h2" ><%= element.price %>&dollar;</h2>
+                <div class="quantity-div">
+                  <form action="/decrease/<%= element.bookname %>" method="get">  
+                    <button id="decrease" type="submit">-</button>
+                  </form>
+                  <p class="book-quantity-p"><%= element.quantity %></p>
+                  <form action="/increase/<%= element.bookname %>" method="get">  
+                    <button id="increase" type="submit">+</button>
+                  </form>
+            
+                </div>
+              </div>
+            </div>
+            <hr class="order-hr">
+          <% }) %>
+        <% }else{ %>
+          <p>No Books In Cart</p>
+          <% } %>
+        
+        </div>
+        <div class="summary">
+          <h3 class="order-summary-h3">Order Summary</h3>
+          <% var sum=0; %>
+          <% if (locals.books) { %>
+            <% for (var i = 0; i < books.length; i++) { %>
+              <% sum = sum + parseInt(books[i].price)*books[i].quantity; %>
+          <% } %>
+          <% } %>    
+          
+        <% var Tax=0; %>
+        <% Tax = (sum*0.18) %>
+          
+          <% if (locals.books) { %>
+            <div class="subtotal-list">
+              <div class="item-total">
+                <p>Item Subtotal </p>
+                <p><%= sum %>&dollar;</p>
+              </div> 
+              <hr class="order-summary-hr">
+              <div class="item-tax">
+                <p>Tax</p>
+                <p><%= parseInt(Tax) %>&dollar;</p>
+              </div>
+              <hr class="order-summary-hr">
+              <div class="item-totalpaybalamout">
+                <p>Payable Amount</p>
+                <p><%= parseInt(Tax) + parseInt(sum) %>&dollar;</p>
+              </div>
+            </div>
+          <% } %>
+             <form action="/payment" method="post">
+               <button type="submit">Payment</button>
+             </form>
+        </div>
+      </div>
       <hr class="cart-hr" />
       <%- include('../partials/footer.ejs') %>
     </div>
   </body>
 
-  <script src="/src/buy.js"></script>
+  <script src="/src/cart.js"></script>
 </html>

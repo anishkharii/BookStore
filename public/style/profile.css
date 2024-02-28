@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Average&family=Kanit:wght@200&family=Montserrat:wght@100;500&family=Raleway:wght@100&family=Roboto:wght@100&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Average&family=Kanit:wght@200&family=Montserrat:wght@100;200;500&family=Raleway:wght@100&family=Roboto:wght@100&family=Ubuntu:wght@300&display=swap');
+
+.path-div {
+    display: flex;
+}
+
+body {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    height: 100vh;
+}
+
+.path-div a,
+.path-div p {
+    color: white;
+    margin: 7px;
+    margin-left: 30px;
+    margin-top: 15px;
+    font-size: 20px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.path-div a {
+    color: #defaf8;
+}
+
+.color-a {
+    color: #defaf8;
+}
+
+.profile-partision {
+    display: flex;
+    margin: 20px;
+
+}
+
+.profile-partision-1 {
+    width: 500px;
+    margin: 20px 32px;
+    font-size: larger;
+}
+
+.profile-partision-1 ul li {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    border: 0px solid;
+    margin: 20px 0px;
+    border-radius: 25px;
+}
+
+
+h1 {
+    margin: 20px;
+    margin-left: 52px;
+    color: #8feeff;
+
+}
+
+.profilr-part-3 {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+.personal-info-div-3,
+.personal-info-div-2,
+.personal-info-div-1 {
+    width: 33%;
+}
+
+.personal-info-div-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.personal-info-div-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+#input-firstname,
+#input-number,
+#input-date,
+#input-lastname,
+#input-email,
+#input-password,
+#input-password1,
+#input-con-password,
+#input-reenter-password {
+    background: transparent;
+    margin: 10px;
+    border: 2px solid white;
+    border-radius: 8px;
+    width: 245px;
+    height: 25px;
+    padding-left: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #defaf8;
+}
+
+::placeholder {
+    color: #defaf8;
+    opacity: 0.6;
+}
+
+.header-h4 {
+    font-size: 30px;
+    color: #8feeff;
+    margin: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.profile-div-name {
+    color: lightblue;
+    font-size: 23px;
+    margin: 5px;
+    margin-bottom: 30px;
+}
+
+.info-div {
+    color: #defaf8;
+    text-align: justify;
+}
+
+.input-div-name {
+    display: flex;
+}
+
+.personal-info-div-2-edit {
+    width: 66%;
+    display: flex;
+    flex-direction: row;
+}
+
+.change-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 76px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media screen and (max-width: 1220px) {
+
+    #input-firstname,
+    #input-number,
+    #input-date,
+    #input-lastname,
+    #input-email,
+    #input-password,
+    #input-password1,
+    #input-con-password,
+    #input-reenter-password {
+        width: 230px;
+    }
+}
+
+@media screen and (max-width: 1170px) {
+
+    .profile-partision {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile-partision-1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile-partision-1 ul {
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+    }
+
+    .profile-partision-1 ul li {
+        margin: 10px 20px;
+    }
+
+    .input-div-name {
+        flex-direction: column;
+    }
+
+    .personal-info-div-3 {
+        display: none;
+    }
+
+    .personal-info-div-2-edit {
+        width: auto;
+
+    }
+
+    .change-form {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .profile-partision-1 {
+        width: 500px;
+        margin: 20px 32px;
+        font-size: larger;
+    }
+
+    .profile-partision-1 ul {
+        flex-direction: column;
+    }
+
+    .profile-partision-1 ul li {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        list-style: none;
+        border: 0px solid;
+        margin: 6px 0px;
+        border-radius: 25px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .profilr-part-3 {
+        flex-direction: column;
+        width: auto;
+    }
+
+    .info-div {
+        width: auto;
+    }
+
+    .personal-info-div-2-edit {
+        justify-content: center;
+    }
+
+    .personal-info-div-2,
+    .personal-info-div-1 {
+        width: auto;
+        margin: 10px 0px;
+    }
+}
+
+.nav-hr {
+    transition: 1.2s;
+    margin: 30px 100px;
+}
+
+.margin-hr {
+    transition: 1.2s;
+    margin-top: 270px;
+
+}
+
+@media (min-height: 100vh) {
+    .container {
+        height: 100%;
+    }
+}
+
+.small-th {
+    width: 60px;
+}

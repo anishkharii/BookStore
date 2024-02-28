@@ -19,33 +19,48 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="/style/style.css" />
+    <link rel="stylesheet" href="/style/flash-msg.css" />
     <link rel="stylesheet" href="/style/sell.css" />
+
+
     <title>Book Store</title>
   </head>
   <body>
     <div class="container">
       <%- include('../partials/navbar.ejs') %>
-
+      <% if ( expressFlash.length > 0 ) { %>
+        <p class='<%= class_name %>'><%= expressFlash %></p>
+        <% } %>
       <div class="sell-body">
+        <hr class="newhr"/>
         <div class="book-list">
           <p>Already In Sell Books</p>
+          <% if (locals.nobooksmsg) { %>
+            <p class="nobookp"><%= nobooksmsg %></p>
+          <% } %>
+         
+          
           <ul>
-            <% if (locals.books) { %> <% books.forEach(element => { %>
+          <% if (locals.books) { %>
+               <% books.forEach(element => { %>
             <li>
-              <span><%= element.bookname %></span>
-              <span>Price:<%= element.price %></span
-              ><span
-                ><i id="updatebook" class="fa-regular fa-pen-to-square"></i
-                ><i id="deletebook" class="fa-solid fa-trash"></i
-              ></span>
+              <span class="booknamespan"><%= element.bookname %></span>
+              <span > <%= element.price %> &dollar;</span>
+              <span id="updatedelete">
+                <form action="/delete/<%=element.bookname%>" method="get">
+                  <button name="<%= element.bookname %>" id="deletebookbtn" type="submit"><i id="deletebook" class="fa-solid fa-trash"></i></button>
+                </form> 
+                <form action="/update/<%= element.bookname %>" method="post">
+                  <button name="<%= element.bookname %>" id="deletebookbtn" type="submit"><i class="fa-regular fa-pen-to-square"></i></button>
+                </form>
+              </span>
             </li>
-            <% }) %> <% }else{ %>
-            <p>No Books</p>
+            <% }) %>
             <% } %>
-            <!-- <li><span>Book Name</span> <span>Price:</span><span><a href="/updatebook" class="updatebook" ><i class="fa-regular fa-pen-to-square"></i></a><a  class="deletebook" ><i class="fa-solid fa-trash"></i></a></span></li>
-            <li><span>Book Name</span> <span>Price:</span><span><a class="updatebook"><i class="fa-regular fa-pen-to-square"></i></a><a  class="deletebook"><i class="fa-solid fa-trash"></i></a></span></li> -->
           </ul>
         </div>
+      </div>
+
         <hr />
         <div class="add-new-book">
           <h1>Add New Book</h1>
@@ -63,6 +78,27 @@
               id="price"
             />
             <input
+              type="number"
+              name="quantity"
+              placeholder="Enter A Quantity Of Book"
+              id="price"
+            />
+            <div class="select">
+              <select name="booktype" class="formet" id="book-type" aria-placeholder="Catagory">
+                <option value="none">Type Of Books</option>
+                <option value="Horror">Horror</option>
+                <option value="Rommance">Rommance</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Poetry">Poetry</option>
+                <option value="Essays">Essays</option>
+                <option value="Self-help">Self-help</option>
+                <option value="Memair">Memair</option>
+                <option value="Classics">Classics</option>
+                <option value="Cookbooks">Cookbooks</option>
+              </select>
+            </div>
+           
+            <input
               type="text"
               name="authorname"
               placeholder="Enter A Author Name"
@@ -77,12 +113,11 @@
             <button id="submitbtn" type="submit">submit</button>
           </form>
         </div>
-      </div>
       <hr class="footer-hr" />
       <%- include('../partials/footer.ejs') %>
     </div>
   </body>
   <script src="/src/sell.js"></script>
   <script src="/src/updatebook.js"></script>
-  <script src="/index.js"></script>
+
 </html>

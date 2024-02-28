@@ -1,0 +1,270 @@
+.book-img-cart {
+    width: 200px;
+    height: 250px;
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-body {
+    margin: 30px 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.Book-detail {
+    position: relative;
+    display: flex;
+}
+
+.book-detail-1 {
+    padding: 20px;
+}
+
+.book-detail-2 {
+    padding: 20px;
+    margin: 15px;
+}
+
+.order-hr {
+    margin: 18px;
+}
+
+.order-summary-hr {
+    margin: 12px 0px;
+
+}
+
+.wishlist-btn {
+    border: none;
+    background: transparent;
+    margin: 0;
+    width: 150px;
+    margin-left: 15px;
+}
+
+.remove-cart-btn {
+    border: none;
+    background: transparent;
+    margin: 0;
+    width: 150px;
+}
+
+.bookname-h3 {
+    font-size: 30px;
+    margin-left: 20px;
+    margin: 15px;
+    padding: 5px;
+    width: 500px;
+    color: #8feeff;
+
+}
+
+.cart-author {
+    margin: 15px;
+    font-size: 20px;
+    padding: 5px;
+    color: #defaf8;
+
+}
+
+.delivered-p {
+    font-size: 15px;
+    margin: 15px;
+    padding: 5px;
+    color: #defaf8;
+
+}
+
+.rating-p {
+    font-size: 15px;
+    margin: 15px;
+    padding: 5px;
+}
+
+.book-price-h2 {
+    margin: 0 15px;
+    color: #8feeff;
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-quantity-p {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border: 2px solid;
+    border-radius: 26px;
+    font-size: 18px;
+    justify-content: center;
+}
+
+.summary {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-total,
+.item-tax,
+.item-totalpaybalamout {
+
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0px;
+}
+
+.order-summary-h3 {
+
+    color: #8feeff;
+
+    font-size: 30px;
+    margin: 30px 0px;
+}
+
+.subtotal-list {
+    width: 300px;
+}
+
+.btn-div {
+    display: flex;
+}
+
+.btn-div button {
+    border-radius: 10px;
+    margin: 12px 10px;
+    width: 170px;
+}
+
+.heading-h1 {
+    color: #8feeff;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.quantity-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#increase,
+#decrease {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+}
+
+.btn-div {
+    display: flex;
+    flex-direction: row;
+}
+
+button i {
+    font-size: 25px;
+}
+
+.container {
+
+    height: 100%;
+
+}
+
+
+.nav-hr {
+    margin: 40px 100px;
+    transition: 1.2s;
+}
+
+.margin-hr {
+    transition: 1.2s;
+    margin-top: 270px;
+
+}
+
+.cart-hr {
+    margin: 30px 100px;
+}
+
+.navbar {
+    margin: 10px 0px;
+}
+
+@media screen and (max-width: 1000px) {
+
+
+    .bookname-h3 {
+        width: 352px;
+    }
+
+    .order-hr {
+        width: 84vw;
+        margin: 18px;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .book-detail-1 {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Book-detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bookname-h3,
+    .cart-author,
+    .delivered-p {
+        margin: 0;
+    }
+
+    .btn-div button {
+
+        width: 50px;
+    }
+
+    .btn-div {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .book-detail-2 {
+        padding: 0px;
+        margin: 0px;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .order-summary-hr {
+        width: 100%;
+        margin: 12px 0px;
+    }
+
+    .bookname-h3 {
+        text-align: center;
+    }
+}

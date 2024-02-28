@@ -1,0 +1,77 @@
+.info-massage,
+.message {
+    background: black;
+    color: white;
+    width: 350px;
+    padding: 15px;
+    height: auto;
+    text-align: center;
+    font-variant: petite-caps;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-radius: 7px;
+    margin: auto;
+    position: absolute;
+    top: 88px;
+    left: 550px;
+    animation: hideMe 3s forwards;
+}
+
+.error-msg {
+    background: red;
+    color: white;
+    width: 350px;
+    padding: 15px;
+    height: auto;
+    text-align: center;
+    font-variant: petite-caps;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-radius: 7px;
+    margin: auto;
+    position: absolute;
+    top: 88px;
+    left: 450px;
+    animation: hideMe 3s forwards;
+}
+
+.successful-msg {
+    background: green;
+    color: white;
+    width: 350px;
+    padding: 15px;
+    height: auto;
+    text-align: center;
+    font-variant: petite-caps;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-radius: 7px;
+    margin: auto;
+    position: absolute;
+    top: 88px;
+    left: 450px;
+    animation: hideMe 3s forwards;
+}
+
+@keyframes hideMe {
+    0% {
+        opacity: 1;
+    }
+
+    99.99% {
+        opacity: 1;
+    }
+
+    100% {
+        display: none;
+    }
+}

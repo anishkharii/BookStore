@@ -1,8 +1,10 @@
 const StudentDb = require('./mongoose')
 const multer = require('multer')
 const upload = multer({ dest: "/public/uploads" })
+const fs = require('fs')
 let imgpath;
-let booklist = []
+const jsonFilePath = './public/prapi.json';
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         return cb(null, './public/uploads')
@@ -10,16 +12,32 @@ const storage = multer.diskStorage({
     filename: async function (req, file, cb) {
         imgpath = `${Date.now()}-${file.originalname}`
         const useremail = req.cookies.userinfocookie['email']
-        const userdatas = await StudentDb.findOne({ email: useremail })
-        const userbookinfo = { bookname: req.body.bookname, price: req.body.price, authorname: req.body.authorname, imgpath: imgpath }
-        const books = userdatas.books
-        books.push(userbookinfo)
-        const appendbook = await StudentDb.updateOne({ email: useremail }, { $set: { books: books } })
-        console.log(appendbook)
+        const userbookinfo = { bookname: req.body.bookname, price: req.body.price, authorname: req.body.authorname, imgpath: imgpath, selleremail: useremail, booktype: req.body.booktype, quantity: req.body.quantity }
+        fs.readFile(jsonFilePath, 'utf8', (err, data) => {
+            if (err) {
+                console.error('Error reading JSON file:', err);
+                return;
+            }
+            let existingData;
+            try {
+                existingData = JSON.parse(data);
+            } catch (parseError) {
+                console.error('Error parsing JSON:', parseError);
+                return;
+            }
+            existingData.push(userbookinfo);
+
+            fs.writeFile(jsonFilePath, JSON.stringify(existingData, null, 2), 'utf8', (writeErr) => {
+                if (writeErr) {
+                    console.error('Error writing to JSON file:', writeErr);
+                    return;
+                }
+                console.log('New data added to the JSON file.');
+            });
+        });
+
         return cb(null, imgpath)
     }
 })
 const uploads = multer({ storage })
-
-
 module.exports = uploads

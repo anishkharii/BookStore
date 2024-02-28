@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="../img/books.png" type="image/x-icon" />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -12,35 +10,102 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="/style/style.css" />
+    <link rel="shortcut icon" href="../img/books.png" type="image/x-icon" />
     <link rel="stylesheet" href="/style/buy.css" />
+    <link rel="stylesheet" href="/style/style.css" />
+    <link rel="stylesheet" href="/style/flash-msg.css" />
+   
     <title>Book Store</title>
   </head>
   <body>
-    <div class="container"></div>
-      <%- include('../partials/navbar.ejs') %>
+    <div class="container">
+      <%- include('../partials/navbar.ejs') %>      
+        <hr class="nav-hr"/>
 
-      <div class="buy-book-cont">
-        <% if (locals.books) { %> <% books.forEach(element => { %>
-        <div class="book">
-          <img src="/uploads/<%= element.imgpath %>" alt="not rendre" />
-          <p value="<%= element.bookname %>"><%= element.bookname %></p>
-          <p>Price : <%= element.price %></p>
-          <p><%= element.authorname %></p>
-          <p>
-            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i
-            ><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i
-            ><i class="fa-regular fa-star"></i>
-          </p>
-          <div class="btn-div">
-            <button class="buy-btn" type="submit">Buy</button>
-            <button type="submit">Add To Cart</button>
+        <% if ( expressFlash.length > 0 ) { %>
+          <p class='<%= class_name %>'><%= expressFlash %></p>
+          <% } %>
+       <div>
+          <nav>
+            <ul>
+              <li>
+                <form class="search-form">
+                 <input
+                  onkeyup="search2()"
+                  type="search"
+                  name=""
+                  id="search-item2"
+                  class="mainLoginInput"
+                  type="text"
+                  placeholder=' Search Book'
+                 />
+                </form>
+              </li>
+              <li>
+                
+               <select onchange="selectcatagoryfun()" id="mySelect" name="catagory-select">
+                <option selected disabled>Select Catagory </option>
+                <% if (catagory) { %>
+                 <% catagory.forEach(element => { %>
+                  <option value=<%= element %>><%= element %></option>
+                 <% }) %>
+                <% } %>
+              
+                
+               </select>
+                  
+              </li>
+              <li>
+                <a>Price</a>
+                <ul>
+                  <p onclick="lowtohigh()" class="ltoh">Low To High</p>
+              <p onclick="hightolow()" class="ltoh">High To Low</p>
+              <p onclick="below50()" class="ltoh">Below 50</p>
+              <p onclick="below75()" class="ltoh">Below 75</p>
+              <p onclick="above150()" class="ltoh">Above 150</p>
+              <p onclick="above175()" class="ltoh">Above 175</p>
+                </ul>
+              </li>
+            </ul>
+          </nav>    
+        </div>         
+
+      <div class="part-2-con">
+
+        <div class="all-list">
+          <form class="search-form">
+            <input
+              onkeyup="search()"
+              type="search"
+              name=""
+              id="search-item"
+              class="mainLoginInput"
+              type="text"
+              placeholder=' Search Book'
+              />
+          </form>
+          <div>
+            <h2 class="filter-head">Catagory</h2>
+
+            <div class="catagory-list">
+            </div>
           </div>
+          <div>
+            <h2 class="filter-head">Price</h2>
+            <div class="price-list">
+              <p onclick="lowtohigh()" class="ltoh">Low To High</p>
+              <p onclick="hightolow()" class="ltoh">High To Low</p>
+              <p onclick="below50()" class="ltoh">Below 50</p>
+              <p onclick="below75()" class="ltoh">Below 75</p>
+              <p onclick="above150()" class="ltoh">Above 150</p>
+              <p onclick="above175()" class="ltoh">Above 175</p>
+            </div>
+          </div>
+          
         </div>
-        <% }) %> <% }else{ %>
-        <p>NO Book in Sell</p>
-        <% } %>
-      </div>
+ <div class="buy-book-cont">
+        </div> 
+</div>
       <hr class="footer-hr" />
       <%- include('../partials/footer.ejs') %>
     </div>

@@ -1,9 +1,3 @@
-const fun = async () => {
-    let data = await document.querySelector('.updatebook').addEventListener('click', (e) => { e.target.parentNode.parentNode.parentNode.firstChild.innerHTML })
-}
-fun()
-document.querySelector('.deletebook').addEventListener('click', (e) => { console.log(e.target) })
-
 
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
