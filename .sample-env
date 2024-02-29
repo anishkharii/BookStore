@@ -1,0 +1,2 @@
+MONGO_URL=//[Your mongo database URL]
+PORT=3000 
